@@ -24,14 +24,14 @@ df_arquivo=df_arquivo.rename(columns={'Mês ameno': 'Menor ocorrência', 'Mês i
 df_arquivo = df_arquivo.T
 df_arquivo['Total por mês'] = df_arquivo.iloc[:-3, :].sum(axis=1)
 df_arquivo = df_arquivo.T
-#print(df_arquivo)
+print(df_arquivo)
 
 #Quais os anos e o mês destes que setembro não registrou a maior ocorrência de focos?
 anos_distoantes = df_arquivo.iloc[:-1,-2]
 filter= anos_distoantes != "Setembro"
 anos_distoantes=anos_distoantes[filter]
 anos_distoantes=anos_distoantes.to_string()
-#print(anos_distoantes)
+print(anos_distoantes)
 
 df_arquivo.to_csv("arquivo_final.csv")
 
